@@ -13,6 +13,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new(task_params)
 
     if @task.save
+     logger.debug "task: #{@task.attributes.}" # loggerオブジェクトのdebugメソッドを呼び、ログにタスクの情報をdebugレベルでレベルでレベルで出力する、という指定
      redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
       render :new
@@ -35,6 +36,11 @@ class TasksController < ApplicationController
     redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。"
   end
 
+ # def task_logger    ←オリジナルのロガー作成したやつ達
+  #  @task_logger ||= Logger.new('log/task.log', 'daily')
+  #end
+  
+  #task_logger.debug 'taskのログを出力'
   
   private
 
