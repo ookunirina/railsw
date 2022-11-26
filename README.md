@@ -1,4 +1,4 @@
-/Users/ookuniosamusai/workspace/runteq/genba_rails/taskleafのファイル
+/workspace/runteq/genba_rails/taskleafのファイル
 
 # README
 
